@@ -1,0 +1,15 @@
+<md-content>
+	<md-list flex>
+        <md-subheader class="md-no-sticky">All Users <md-button class="" ng-click="vm.showAddUser()">Add User</md-button></md-subheader>
+        <md-list-item class="md-3-line" ng-repeat="user in vm.users" ng-click="null">
+          <img ng-src="img/users/{{ (user.display_image != '') ?  user.display_image : 'user-1.png' }}" class="md-avatar" alt="{{user.name}}" />
+          <div class="md-list-item-text" layout="column">
+            <h3>{{ user.name }}</h3>
+            <h4>{{ user.position }}</h4>
+            <p>{{ user.email }}</p>
+          </div>
+          <md-button class="" ng-click="vm.showEditUser(user)">Edit</md-button>
+          <md-button class="" ng-click="vm.deleteUser(user.id)">Delete</md-button>
+        </md-list-item>
+    </md-list>
+</md-content>

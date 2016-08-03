@@ -1,0 +1,133 @@
+div.project-milestone-main-container {
+	position: relative;
+	width: 100%;
+	background: #E0F2F1;
+	div.pivot-wrapper {
+		position: relative;
+		width: 99%;
+		background: #B2DFDB;
+		margin: 5px 5px;
+		border: 1px solid #00897B;
+		div.project-milestone-wrapper {
+			position: relative;
+			max-width: 100%;
+		    overflow-x: auto;
+		    white-space: nowrap;
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+		div.release-wrapper {
+			float: left;
+		}
+		div.project-milestone {
+			display: inline-block;
+			padding: 0 !important;
+			margin: 0 !important;
+
+			/*this is the css of dragular event*/
+			div.dragular-milestones.gu-over-accept {
+				background: #00ACC1;
+			}
+		}
+		div.vertical {
+			width: 150px;
+			border-right: 1px solid #00897B;
+			background: #80CBC4;
+			div.project-name {
+				padding: 0 !important;
+				margin: 0 !important;
+				background: #1DE9B6;
+				p, h1, h2, h3, h4, h5, h6 {
+					padding: 0;
+					margin: 0;
+				}
+			}
+			div.empty {
+				background: #A7FFEB;
+			}
+			div.box {
+				height: 100px;
+			}
+			div.release-date {
+				background: #1DE9B6;
+			}
+			div.release-date, div.milestone {
+				border-top: 1px solid #00897B;
+				div {
+					padding: 0 !important;
+					margin: 0 !important;
+				}
+			}
+		}
+		div.clear-float {
+			clear: both;
+		}
+	}
+}
+
+/**
+ * hiding
+ */
+div.hide {
+	display: none;
+	line-height: 0;
+	visibility: hidden;
+}
+
+/**
+ * old pivot table design
+ */
+.pm-m-u-display_image {
+	width: 50px;
+	height: auto;
+}
+
+div.pm-pivot-container {
+	margin-top: 50px;
+	div.pm-row {
+		// margin-top: 25px;
+		// margin-bottom: 10px;
+		margin-left: 0;
+		margin-right: 0;
+		border-top: 1px solid #e2e2e2;
+		// padding: 25px 0 10px 0;
+
+		div.milestones-row {
+			border-left: 1px solid #e2e2e2;
+			div.milestone-row {
+				padding: 2px;
+				p {
+					padding: 0;
+					margin: 0;
+					font-weight: normal;
+				}
+				// padding-left: 15px;
+				// padding-top: 10px;
+				// padding-bottom: 5px;
+				// margin-bottom: 10px;
+				// margin-right: 20px;
+				cursor: pointer;
+				background: #BBDEFB;
+				
+				div.milestone-detail {
+					// margin-left: 10px;
+					div.milestone-users {
+						img.user-img {
+							width: 16px;
+							height: auto;
+							border-radius: 50%;
+						}
+					}
+					div.overloaded {
+						color: #D50000;
+						font-weight: bold;
+					} 
+				}
+			}
+
+			div.is_important {
+				background: #FFAB91 !important;
+			}
+		}
+	}
+}

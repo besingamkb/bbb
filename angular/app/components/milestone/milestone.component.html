@@ -1,0 +1,27 @@
+<div ng-init="vm.getMilestones()" >
+	<md-content ng-if="vm.loaded">
+		<h1 class="md-display-3">{{ vm.project.project_name }}</h1>
+		<div layout flex>
+			<md-button class="md-raised md-warn" ng-click="vm.deleteProject($event, vm.project.id)" ng-if="">Delete Project</md-button>
+			<md-button class="md-raised md-primary" ng-click="vm.showAddDialog($event)">add milestone</md-button>
+		</div>
+		<div layout="column" flex>
+			<md-content>
+		      	<md-list flex>
+			        <md-subheader class="md-no-sticky">List of Milestone</md-subheader>
+
+		    	</md-list>
+		    </md-content>
+		</div>
+	</md-content>
+	<div class="milestone-content">
+		<div class="child" ng-repeat="milestone in vm.milestones" ng-class="(milestone.is_important == 1) ? 'is_important' : '' " ui-sref="app.milestone-detail({milestone_id: milestone.id})">
+			<div class="controls">
+				<a ><i class="fa fa-pencil-square-o" aria-hidden="true" ng-click="vm.editMilestone($event, milestone)"></i></a>
+				<a ><i class="fa fa-times" aria-hidden="true" ng-click="vm.deleteMilestone($event, milestone.id)"></i></a>
+			</div>
+			<h4>{{ milestone.milestone_name }}</h4>
+			<p class="milestone-release">Release Date: <span>{{ milestone.release }}</span></p>
+		</div>
+	</div>
+</div>

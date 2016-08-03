@@ -1,0 +1,69 @@
+<md-dialog ng-cloak class="">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>New Milestone</h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+        <md-dialog-conten layout="column">
+            <div  class="md-dialog-content" layout="row">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <md-input-container>
+                                    <label>Milestone Name</label>
+                                    <input ng-model="milestone.milestone_name" value="">
+                                </md-input-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div flex><md-datepicker ng-model="milestone.release" md-placeholder="Release date"></md-datepicker></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <md-input-container>
+                                    <label></label>
+                                    <md-switch ng-model="milestone.is_important" aria-label="Switch 1">
+                                        Is important
+                                    </md-switch>
+                                </md-input-container>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+
+                    
+            </div>
+            <!-- <div class="md-dialog-content">
+                <md-input-container>
+                    <label>Milestone Name</label>
+                    <input ng-model="milestone.milestone_name" value="">
+                </md-input-container>
+                <md-datepicker ng-model="user.submissionDate" md-placeholder="Enter date">
+                </md-datepicker>
+                <md-input-container>
+                    <label>Release Date</label>
+                    <input ng-model="milestone.release" value="">
+                </md-input-container>
+                <md-input-container>
+                    <label>Release Date</label>
+                    <md-switch ng-model="data.cb1" aria-label="Switch 1">
+                        Switch 1: {{ data.cb1 }}
+                    </md-switch>
+                </md-input-container>
+            </div> -->
+            </md-dialog-content>
+            <md-dialog-actions layout="row">
+                <span flex></span>
+                <md-button class="md-raised md-default" ng-click="vm.hide()">
+                    Cancel
+                </md-button>
+                <md-button class="md-raised md-primary" ng-click="vm.save(milestone)">
+                    Save
+                </md-button>
+            </md-dialog-actions>
+    </form>
+</md-dialog>

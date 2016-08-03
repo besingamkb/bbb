@@ -1,0 +1,19 @@
+<md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch  ng-if="vm.show">
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">{{ vm.profile.name }}</span>
+            <span class="md-subhead">{{ vm.profile.position }}</span>
+        </md-card-title-text>
+        <md-card-title-media>
+            <div class="md-media-lg card-media">
+            	<img class="profile-img" src="img/users/{{ (vm.profile.display_image != '') ?  vm.profile.display_image : 'user-2.png' }}">
+            </div>
+        </md-card-title-media>
+    </md-card-title>
+      <input type="file" id="changePhotoBtn" ngf-select="vm.uploadFiles($file, $invalidFiles)" accept="image/*" ngf-max-height="1000" ngf-max-size="1MB" style="display: none">
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button ng-click="vm.showEdit()">Update Profile</md-button>
+        <md-button ng-click="vm.triggerUpload()">Change Photo</md-button>
+    </md-card-actions>
+
+</md-card>

@@ -1,0 +1,15 @@
+/vendor
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
+.idea/
+/bower_components
+npm-debug.log
+public/storage
+public/views
+public/css
+public/js
+public/img
+public/build
+dev-helpers/*

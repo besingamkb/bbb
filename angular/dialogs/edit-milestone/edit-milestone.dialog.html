@@ -1,0 +1,48 @@
+<md-dialog>
+    <form ng-submit="vm.save()">
+
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h2>Edit-milestone</h2>
+          </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div  class="md-dialog-content" layout="row">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <md-input-container>
+                                    <label>Milestone Name</label>
+                                    <input ng-model="vm.milestone.milestone_name" value="">
+                                </md-input-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div flex><md-datepicker ng-model="vm.milestoneDate(vm.milestone.release)" md-placeholder="Release date"></md-datepicker></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <md-input-container>
+                                    <label></label>
+                                    <md-switch ng-model="vm.milestone.is_important" aria-label="Switch 1">
+                                        Is important
+                                    </md-switch>
+                                </md-input-container>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+
+                    
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions>
+            <md-button type="button" ng-click="vm.cancel()">Cancel</md-button>
+            <md-button class="md-primary md-raised" type="submit">Save</md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

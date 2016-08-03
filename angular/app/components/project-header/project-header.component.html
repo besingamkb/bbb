@@ -1,0 +1,20 @@
+<md-toolbar class="md-hue-2">
+  <div class="md-toolbar-tools">
+    <h2>
+      <span>Project Bible</span>
+    </h2>
+  </div>
+</md-toolbar>
+<md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+  <md-nav-item md-nav-sref="app.projectsmilestones" ng-if="vm.auth.isAuthenticated()" name="Home">Home</md-nav-item>
+  <md-nav-item md-nav-sref="app.projects" ng-if="vm.auth.isAuthenticated()" name="Projects">Projects</md-nav-item>
+  <md-nav-item md-nav-sref="app.profile" ng-if="vm.auth.isAuthenticated()" name="Profile">Profile</md-nav-item>
+  <md-nav-item md-nav-sref="app.users" ng-if="vm.isAdmin == 1" name="Users">Users</md-nav-item>
+  <!-- <md-nav-item md-nav-sref="app.milestone" name="Milestone">Milestone</md-nav-item> -->
+  <!-- <md-nav-item md-nav-sref="app.login" name="Login" ng-if="!vm.auth.isAuthenticated()">Login</md-nav-item> -->
+  <md-nav-item name="Login" ng-if="vm.auth.isAuthenticated()" md-nav-click="vm.logout()">Logout</md-nav-item>
+  <!-- these require actual routing with ui-router or ng-route, so they won't work in the demo
+  <md-nav-item md-nav-sref="app.page4" name="page4">Page Four</md-nav-item>
+  <md-nav-item md-nav-href="#page5" name="page5">Page Five</md-nav-item>
+  -->
+</md-nav-bar>

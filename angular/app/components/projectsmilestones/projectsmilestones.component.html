@@ -1,0 +1,61 @@
+<div class="project-milestone-main-container">
+    <h1>Project's Milestones</h1>
+    <div class="pivot-wrapper">
+        <div class="release-wrapper vertical" >
+            <div class="box empty">
+
+            </div>
+            <div class="box release-date"  ng-repeat="(release, pm) in vm.project_milestones">
+                <h5>W/C {{ vm.releaseDateFormat(release) }}</h5>
+            </div>
+        </div>
+        <div class="project-milestone-wrapper">
+            <div class="project-milestone vertical" ng-repeat="(project_key, project_data) in vm.all_projects">
+                <div class="box project-name">
+                    <h5>{{ project_data.project_name }}</h5>
+                </div>
+                <div class="dragular-milestones">
+                    <div class="box milestone" ng-repeat="(release, pm) in vm.project_milestones" >
+                        <!-- <div>{{ vm.milestoneDetailed(release, project_data) }}</div> -->
+                        <div>{{ release }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="clear-float"></div>
+    </div>
+</div>
+
+<div class="container">
+    <md-content>
+        <div class="pm-pivot-container">
+            <div layout="row">
+                <div flex>
+                	<!-- <h3>projects / release</h3> -->
+                </div>
+                <div flex ng-repeat="project in vm.projects">
+                	<p>{{ project.project_name }}</p>
+                </div>
+            </div>
+            <div layout="row" ng-repeat="(release, pm) in vm.project_milestones" class="pm-row">
+                <div flex><p>W/C {{ vm.releaseDateFormat(release) }}</p></div>
+                <div flex ng-repeat="milestones in pm" class="milestones-row">
+                	<div ng-repeat="milestone in milestones" class="milestone-row md-accent" ng-class="(milestone.is_important == 1) ? 'is_important' : ''" ng-if="milestone.id" ui-sref="app.milestone-detail({milestone_id: milestone.id})">
+                		<div>
+                			<p>{{ milestone.milestone_name }}</p>
+                			<div  class="milestone-detail" layout="row">
+                				<div class="milestone-users" ng-repeat="user in milestone.users" ng-class="vm.loaded(release, user.id)">
+                					<img class="user-img" src="img/users/{{ (user.display_image != '') ?  user.display_image : 'user-1.png' }}">
+                					{{ user.pivot.days }}
+                					<md-tooltip md-direction="bottom">{{ user.name }}</md-tooltip>
+                				</div>
+                			</div>
+
+                		</div>
+                	</div>
+                </div>
+            </div>
+        </div>
+    </md-content>
+</div>

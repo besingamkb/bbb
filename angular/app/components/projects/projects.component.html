@@ -1,0 +1,27 @@
+<md-content ng-init="vm.getProjects()">
+	<h1 class="md-display-3">Projects</h1>
+	<div layout flex>
+		<md-button class="md-raised md-primary" ng-click="vm.showAddDialog($event)">add projects</md-button>
+	</div>
+	<div layout="column" flex>
+		<md-content>
+	      	<md-list flex>
+		        <md-subheader class="md-no-sticky">List of projects</md-subheader>
+		        <md-list-item 
+		        	class="md-3-line" 
+		        	ng-repeat="project in vm.projects" 
+		        	ui-sref="app.milestone({project_id: project.id})"  
+		        	flex>
+		          <!-- <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" /> -->
+		          <!-- <md-divider></md-divider> -->
+		          <p class="project-title">{{ project.project_name }}</p>
+		          <!-- <md-checkbox class="md-secondary" ng-model="person.selected"></md-checkbox> -->
+		          <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+		          	<md-button class="md-raised md-warn projectOptionBtn" ng-click="vm.deleteProject($event, project.id)">Delete</md-button>
+		          	<md-button class="md-raised md-primary projectOptionBtn" ng-click="vm.showEditDialog($event, project)">Edit</md-button>
+		          </section>
+		        </md-list-item>
+	    	</md-list>
+	    </md-content>
+	</div>
+</md-content>
